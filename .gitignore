@@ -1,0 +1,46 @@
+# Dev Files
+**/decryption.py
+**/auto_cleaning.py
+**/extraction.py
+**/opt_step1.py
+**/opt_step2.py
+**/opt_step3.py
+**/opt_step4.py
+**/map_rendering.py
+**/combined.py
+**/jlacmap_cleaning.ipynb
+**/ssmix_exp.ipynb
+**/tally_files.ipynb
+
+# Dev Directories
+**/mnt/
+**/ssmix_root/
+**/sample_scripts/
+**/reference/
+**/analytics/
+**/internal/
+**/outputs/
+**/temp/
+
+# Common directories & files
+**/.env
+**/.env.development
+**/docker-compose.override.yml
+**/core
+**/nohup.out
+**/.DS_Store
+**/__pycache__/
+**/.devcontainer/
+**/.ipynb_checkpoints/
+**/.vscode/
+**/.venv/
+**/venv/
+**/.env/
+**/env/
+*.egg-info/
+docs/build/**
+docs/source/generated/**
+
+
+
+

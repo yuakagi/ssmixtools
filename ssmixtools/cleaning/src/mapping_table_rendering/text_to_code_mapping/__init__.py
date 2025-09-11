@@ -1,0 +1,2 @@
+from .text_to_atc_mapping import create_text_to_atc_table
+from .text_to_yj7_mapping import create_text_to_yj7_table

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Set this to true for development (pip install -e . is run.)
+        DEVELOPMENT: false
+    container_name: ssmixtools-python
+    env_file:
+      - .env
+    environment:
+      SSMIX_ROOT: ${SSMIX_ROOT}
+      MOUNTED_DIR: ${MOUNTED_DIR}
+    volumes:
+      - ${SSMIX_ROOT}:/code/ssmixtools/ssmix_root
+      - ${MOUNTED_DIR}:/code/ssmixtools/mnt
+    ipc: host
+    tty: true
