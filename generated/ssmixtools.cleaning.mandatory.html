@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssmixtools.cleaning.mandatory package &mdash; ssmixtools 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/color_theme.css?v=d2d0a5a9" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+    <link rel="canonical" href="https://yuakagi.github.io/ssmixtools/generated/ssmixtools.cleaning.mandatory.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ssmixtools.cleaning.optional package" href="ssmixtools.cleaning.optional.html" />
+    <link rel="prev" title="ssmixtools.cleaning package" href="ssmixtools.cleaning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentations:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table_definitions/tables.html">Table Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SSMIXTOOLS API:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ssmixtools.html">ssmixtools package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ssmixtools.cleaning.html">ssmixtools.cleaning package</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ssmixtools.cleaning.mandatory package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssmixtools.cleaning.optional.html">ssmixtools.cleaning.optional package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.decryption.html">ssmixtools.decryption package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.extraction.html">ssmixtools.extraction package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ssmixtools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ssmixtools.html">ssmixtools package</a></li>
+          <li class="breadcrumb-item"><a href="ssmixtools.cleaning.html">ssmixtools.cleaning package</a></li>
+      <li class="breadcrumb-item active">ssmixtools.cleaning.mandatory package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ssmixtools.cleaning.mandatory">
+<span id="ssmixtools-cleaning-mandatory-package"></span><h1>ssmixtools.cleaning.mandatory package<a class="headerlink" href="#module-ssmixtools.cleaning.mandatory" title="Link to this heading"></a></h1>
+<p>Cleaning utilities for ssmixtools.</p>
+<dl class="simple">
+<dt>This module provides:</dt><dd><ul class="simple">
+<li><p><cite>render_maps()</cite>: Renders mapping tables needed for data cleaning.</p></li>
+<li><p><cite>clean()</cite>: Cleans clinical records extracted from SS-MIX2 storage.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="ssmixtools.cleaning.mandatory.clean">
+<span class="sig-prename descclassname"><span class="pre">ssmixtools.cleaning.mandatory.</span></span><span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ssmixtools/cleaning/src/mandatory_main.html#clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ssmixtools.cleaning.mandatory.clean" title="Link to this definition"></a></dt>
+<dd><p><strong>Cleans Clinical Records Extracted from SS-MIX2 Storage</strong></p>
+<p>This function processes clinical records using multiple cleaning steps to standardize
+and validate the dataset for downstream analysis. The cleaning pipeline includes code
+mapping, unit normalization, handling missing values, and ensuring the consistency of
+clinical data formats.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Detailed process analytics are also saved in <cite>output_dir</cite>.</p></li>
+<li><p>The cleaning process heavily relies on the provided reference tables; ensure they are updated and accurate.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_dir</strong> (<em>str</em>) – Path to the directory containing source data to be cleaned.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Path to the directory where cleaned data will be saved.</p></li>
+<li><p><strong>reference_dir</strong> (<em>str</em>) – Path to the directory containing reference mapping files.</p></li>
+<li><p><strong>max_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of workers for parallel processing. Defaults to the number of physical CPU cores minus 1.</p></li>
+<li><p><strong>log_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory for saving log files. If <cite>None</cite>, logs are printed to the console.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function saves cleaned datasets and analytics in the specified <cite>output_dir</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clean</span><span class="p">(</span>
+    <span class="n">source_dir</span><span class="o">=</span><span class="s1">&#39;/path/to/source/data&#39;</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;/path/to/cleaned/data&#39;</span><span class="p">,</span>
+    <span class="n">reference_dir</span><span class="o">=</span><span class="s1">&#39;/path/to/reference/files&#39;</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="o">=</span><span class="s1">&#39;/path/to/log/dir&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>)</p>
+</div></blockquote>
+<p><strong>Workflow</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Initialization</strong>:</dt><dd><ul class="simple">
+<li><p>Sets up directories and configurations for cleaning.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Code Mapping</strong>:</dt><dd><ul class="simple">
+<li><p>Maps local clinical codes to standardized codes using reference tables.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Laboratory Data Cleaning</strong>:</dt><dd><ul class="simple">
+<li><p>Standardizes units and cleans laboratory data for consistency.</p></li>
+<li><p>Aggregates numerical and non-numerical test results.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ssmixtools.cleaning.mandatory.render_maps">
+<span class="sig-prename descclassname"><span class="pre">ssmixtools.cleaning.mandatory.</span></span><span class="sig-name descname"><span class="pre">render_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atc_tables_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ssmixtools/cleaning/src/mandatory_main.html#render_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ssmixtools.cleaning.mandatory.render_maps" title="Link to this definition"></a></dt>
+<dd><p><strong>Renders Mapping Tables for Data Cleaning</strong></p>
+<p>This function prepares and renders mapping tables required for cleaning clinical data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p><strong>Internet Usage</strong>: This function downloads necessary tables from external sources. Ensure a stable internet connection and review the implications of downloading content from these sources.</p></li>
+<li><p><strong>Terms of Use</strong>: Tables are sourced from the Medical Information System Development Center (<a class="reference external" href="https://www.medis.or.jp/">https://www.medis.or.jp/</a>). Users must comply with MEDIS terms of use before proceeding.</p></li>
+<li><p><strong>ATC Tables Requirement</strong>: This package does not provide ATC-related source tables. Users must prepare these tables themselves. Ensure the prepared tables include mappings from local codes and drug product names to ATC codes. Japan Pharmaceutical Information Center (JAPIC) provides useful resources.</p></li>
+<li><p><strong>External Dependencies</strong>: The fetches data from external sources. If the structure of these sources changes, the function may fail, and this package needs to be updated accordingly. In this case, please report the issue on GitHub.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Rendered mapping tables are used in subsequent data cleaning processes.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference_dir</strong> (<em>str</em>) – Directory where the rendered mapping tables will be saved.</p></li>
+<li><p><strong>atc_tables_dir</strong> (<em>str</em>) – Directory containing ATC-related source tables. This directory must contain a CSV file named ‘info_atc.csv’.</p></li>
+<li><p><strong>log_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory for saving log files. If <cite>None</cite>, logs are printed to the console.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function saves mapping tables and related analytics in the specified <cite>reference_dir</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p><strong>Example Usage</strong></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">render_maps</span><span class="p">(</span>
+    <span class="n">reference_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/reference&quot;</span><span class="p">,</span>
+    <span class="n">atc_tables_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/atc/tables&quot;</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/log/dir&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ssmixtools.cleaning.html" class="btn btn-neutral float-left" title="ssmixtools.cleaning package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ssmixtools.cleaning.optional.html" class="btn btn-neutral float-right" title="ssmixtools.cleaning.optional package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yu Akagi, MD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

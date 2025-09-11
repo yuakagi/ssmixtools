@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssmixtools.extraction package &mdash; ssmixtools 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/color_theme.css?v=d2d0a5a9" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+    <link rel="canonical" href="https://yuakagi.github.io/ssmixtools/generated/ssmixtools.extraction.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="ssmixtools.decryption package" href="ssmixtools.decryption.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentations:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table_definitions/tables.html">Table Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SSMIXTOOLS API:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ssmixtools.html">ssmixtools package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.cleaning.html">ssmixtools.cleaning package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssmixtools.cleaning.mandatory.html">ssmixtools.cleaning.mandatory package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssmixtools.cleaning.optional.html">ssmixtools.cleaning.optional package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.decryption.html">ssmixtools.decryption package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ssmixtools.extraction package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ssmixtools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ssmixtools.html">ssmixtools package</a></li>
+      <li class="breadcrumb-item active">ssmixtools.extraction package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ssmixtools.extraction">
+<span id="ssmixtools-extraction-package"></span><h1>ssmixtools.extraction package<a class="headerlink" href="#module-ssmixtools.extraction" title="Link to this heading"></a></h1>
+<p>Data extraction utilities for ssmixtools.</p>
+<dl class="simple">
+<dt>This module provides:</dt><dd><ul class="simple">
+<li><p><cite>extract()</cite>: Extracts data from an SS-MIX2 storage.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="ssmixtools.extraction.extract">
+<span class="sig-prename descclassname"><span class="pre">ssmixtools.extraction.</span></span><span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssmix_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pubkey_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identity_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extraction_period_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extraction_period_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_encounters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/ssmixtools/extraction/src/extraction_main.html#extract"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ssmixtools.extraction.extract" title="Link to this definition"></a></dt>
+<dd><p><strong>Top-Level Module for Extracting Data from SS-MIX2 Storage</strong></p>
+<p>This module extracts clinical records from SS-MIX2 storage, processes them, and saves
+the results in a structured format. The extracted data is encrypted using a hybrid cryptosystem
+(AES + RSA) for secure handling.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>Keep your private RSA key secure; it is required for decryption.</p></li>
+<li><p>Ensure the SS-MIX2 root directory is properly structured according to the SS-MIX2 implementation guidelines.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Patient IDs are deidentified by random shuffling and reassignment. The mapping between original and deidentified IDs is stored in the patient ID table.</p></li>
+<li><p>Deidentification is irreversible if the patient ID table is deleted.</p></li>
+<li><p>Extracted data is encrypted. Use the provided RSA private key to decrypt it.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ssmix_root</strong> (<em>str</em>) – Path to the SS-MIX2 root directory.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Directory for saving the extracted files.</p></li>
+<li><p><strong>pubkey_path</strong> (<em>str</em>) – Path to an RSA public key used for encrypting the data.</p></li>
+<li><p><strong>identity_tag</strong> (<em>str</em>) – Identity tag appended to filenames for source identification.</p></li>
+<li><p><strong>max_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of workers for multiprocessing. Defaults to the number of physical CPU cores minus 1.</p></li>
+<li><p><strong>extraction_period_start</strong> (<em>str</em><em>, </em><em>optional</em>) – Earliest visit date for inclusion in the extraction.</p></li>
+<li><p><strong>extraction_period_end</strong> (<em>str</em><em>, </em><em>optional</em>) – Latest visit date for inclusion in the extraction.
+Records of all visits are included if at least one visit falls within this range.</p></li>
+<li><p><strong>min_encounters</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum number of visit dates required for inclusion.</p></li>
+<li><p><strong>log_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Directory for saving logs generated during extraction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Extracted data and analytics are saved in the specified output directory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p><strong>Workflow</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Initialization</strong>:</dt><dd><p>Configures the extraction protocol and verifies prerequisites.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Data Extraction</strong>:</dt><dd><p>Extracts records from SS-MIX2 storage and organizes them by record types.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Inspection and Deidentification</strong>:</dt><dd><p>Inspects extracted data for quality and deidentifies patient IDs.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Encryption</strong>:</dt><dd><p>Encrypts the extracted data using the provided RSA public key.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>Extracted Records</strong></p>
+<blockquote>
+<div><p>The following clinical record tables are extracted:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Clinical Record Tables</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>File Name Pattern</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADT-22_*.bin</p></td>
+<td><p>Admission records</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADT-52_*.bin</p></td>
+<td><p>Discharge records</p></td>
+</tr>
+<tr class="row-even"><td><p>ADT-12_*.bin</p></td>
+<td><p>Outpatient visits</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPR-01_*.bin</p></td>
+<td><p>Diagnosis records</p></td>
+</tr>
+<tr class="row-even"><td><p>OMP-01_*.bin</p></td>
+<td><p>Prescription orders</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMP-02_*.bin</p></td>
+<td><p>Injection orders</p></td>
+</tr>
+<tr class="row-even"><td><p>OML-11_*.bin</p></td>
+<td><p>Laboratory test results</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, the following tables are created:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Additional Tables</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>File Name Pattern</p></th>
+<th class="head"><p>Contents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id_*.bin</p></td>
+<td><p>Pairs of original and deidentified patient IDs</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOB_*.bin</p></td>
+<td><p>Patients’ dates of birth</p></td>
+</tr>
+<tr class="row-even"><td><p>patient_metadata_*.bin</p></td>
+<td><p>Patient metadata including sex</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Example Usage</strong></p>
+<blockquote>
+<div><p>Generate RSA keys</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">2048</span><span class="w"> </span>-f<span class="w"> </span>my_rsa_key
+</pre></div>
+</div>
+<p>Extract Data</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ssmixtools</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">ssmixtools</span><span class="o">.</span><span class="n">extraction</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span>
+        <span class="n">ssmix_root</span><span class="o">=</span><span class="s1">&#39;/path/to/ssmix/root&#39;</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;/directory/for/saving/extracted/files&#39;</span><span class="p">,</span>
+        <span class="n">pubkey_path</span><span class="o">=</span><span class="s1">&#39;/path/to/your/rsa/public/key&#39;</span><span class="p">,</span>
+        <span class="n">identity_tag</span><span class="o">=</span><span class="s1">&#39;UT&#39;</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">extraction_period_start</span><span class="o">=</span><span class="s1">&#39;2011/01/01&#39;</span><span class="p">,</span>
+        <span class="n">extraction_period_end</span><span class="o">=</span><span class="s1">&#39;2023/12/31&#39;</span><span class="p">,</span>
+        <span class="n">min_encounters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">log_dir</span><span class="o">=</span><span class="s1">&#39;/directory/for/leaving/logs&#39;</span>
+    <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Output Directory Structure</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>output_dir
+├── analytics
+└── tables
+    ├── patient_id_UT.bin
+    ├── DOB_UT.bin
+    ├── patient_metadata_UT.bin
+    ├── ADT-12_0_UT.bin
+    ├── ...
+    └── OML-11_76_UT.bin
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ssmixtools.decryption.html" class="btn btn-neutral float-left" title="ssmixtools.decryption package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yu Akagi, MD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

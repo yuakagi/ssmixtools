@@ -1,0 +1,16 @@
+ssmixtools.cleaning package
+===========================
+
+.. automodule:: ssmixtools.cleaning
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ssmixtools.cleaning.mandatory
+   ssmixtools.cleaning.optional

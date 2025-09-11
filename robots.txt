@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://yuakagi.github.io/TwinEHR/sitemap.xml

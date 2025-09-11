@@ -1,0 +1,7 @@
+ssmixtools.cleaning.mandatory package
+=====================================
+
+.. automodule:: ssmixtools.cleaning.mandatory
+   :members:
+   :undoc-members:
+   :show-inheritance:

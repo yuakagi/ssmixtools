@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssmixtools.cleaning.src.optional_main &mdash; ssmixtools 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/color_theme.css?v=d2d0a5a9" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.svg"/>
+    <link rel="canonical" href="https://yuakagi.github.io/ssmixtools/_modules/ssmixtools/cleaning/src/optional_main.html" />
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentations:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../table_definitions/tables.html">Table Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SSMIXTOOLS API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../generated/ssmixtools.html">ssmixtools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../generated/ssmixtools.cleaning.html">ssmixtools.cleaning package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../generated/ssmixtools.cleaning.mandatory.html">ssmixtools.cleaning.mandatory package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../generated/ssmixtools.cleaning.optional.html">ssmixtools.cleaning.optional package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../generated/ssmixtools.decryption.html">ssmixtools.decryption package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../generated/ssmixtools.extraction.html">ssmixtools.extraction package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">ssmixtools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ssmixtools.cleaning.src.optional_main</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ssmixtools.cleaning.src.optional_main</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Optional Data Cleaning Module</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.initialization</span><span class="w"> </span><span class="kn">import</span> <span class="n">initialize_cleaning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.optional_mapping</span><span class="w"> </span><span class="kn">import</span> <span class="n">map_data_with_optional_maps</span><span class="p">,</span> <span class="n">translate_codes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.lab_result_handlings</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_unique_lab_values</span><span class="p">,</span> <span class="n">clean_lab_values</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.cleaning_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">move_internal_files</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.record_cleaning</span><span class="w"> </span><span class="kn">import</span> <span class="n">perform_final_data_cleaning</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...generals.general_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogRedirector</span>
+
+
+<div class="viewcode-block" id="step1">
+<a class="viewcode-back" href="../../../../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step1">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">step1</span><span class="p">(</span>
+    <span class="n">source_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">reference_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maps codes using optional mappings and extracts unique laboratory values for the next step (step2).</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Ensure that `optional_text_to_ATC.csv` and `optional_JLAC10_to_JLAC10.csv` are completed before performing this step. These files should have been created in `reference_dir/created_reference` by :meth:`ssmixtools.cleaning.mandatory.clean`</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_dir (str): Path to the directory containing source data cleaned by :meth:`ssmixtools.cleaning.mandatory.clean`.</span>
+<span class="sd">        reference_dir (str): Path to the directory containing reference mapping files for code mapping.</span>
+<span class="sd">        max_workers (int, optional): Maximum number of workers for parallel processing. Defaults to the number of physical CPU cores minus 1.</span>
+<span class="sd">        log_dir (str, optional): Directory for saving log files. If None, logs are printed to the console.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    **Example Usage**</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            import ssmixtools</span>
+
+<span class="sd">            ssmixtools.cleaning.optional.step1(</span>
+<span class="sd">                source_dir=&#39;/path/to/source/data&#39;,</span>
+<span class="sd">                reference_dir=&#39;/path/to/reference/mapping/files&#39;,</span>
+<span class="sd">                max_workers=None,</span>
+<span class="sd">                log_dir=&#39;/path/to/log/dir&#39;,</span>
+<span class="sd">            )</span>
+
+<span class="sd">    **Workflow**</span>
+
+<span class="sd">        1. **Optional Code Mapping**:</span>
+<span class="sd">            - Applies optional mapping tables to clean and standardize clinical codes.</span>
+
+<span class="sd">        2. **Unique Laboratory Value Extraction**:</span>
+<span class="sd">            - Extracts unique units and nonnumeric laboratory values for the optional laboratory data cleaning (step2).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Debugging config</span>
+    <span class="n">debug_flag</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">debug_flag</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+    <span class="n">test_chunks</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">test</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="k">with</span> <span class="n">LogRedirector</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Create a temp dir in the parent directory of source_dir</span>
+        <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+            <span class="c1"># Initialize</span>
+            <span class="n">initialized</span> <span class="o">=</span> <span class="n">initialize_cleaning</span><span class="p">(</span>
+                <span class="n">source_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">output_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">reference_dir</span><span class="o">=</span><span class="n">reference_dir</span><span class="p">,</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+                <span class="n">test_chunks</span><span class="o">=</span><span class="n">test_chunks</span><span class="p">,</span>
+                <span class="n">internal_dir</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">initialized</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mapping codes...&quot;</span><span class="p">)</span>
+                <span class="n">map_data_with_optional_maps</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mapping done, preparing for the next step ...&quot;</span><span class="p">)</span>
+                <span class="n">extract_unique_lab_values</span><span class="p">()</span>
+                <span class="n">move_internal_files</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All processes completed.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialization for cleaning failed.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="step2">
+<a class="viewcode-back" href="../../../../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step2">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">step2</span><span class="p">(</span>
+    <span class="n">source_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">reference_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cleans laboratory test results using optionally created mapping tables for units and nonnumeric values.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Ensure that `lab_nonnumerics.csv` and `lab_units.csv` are completed before performing this step. These files should have been created in `reference_dir/created_reference` by :meth:`ssmixtools.cleaning.optional.step1`</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_dir (str): Path to the directory containing source data cleaned by :meth:`ssmixtools.cleaning.optional.step1`.</span>
+<span class="sd">        reference_dir (str): Path to the directory containing reference mapping files.</span>
+<span class="sd">        max_workers (int, optional): Maximum number of workers for parallel processing. Defaults to the number of physical CPU cores minus 1.</span>
+<span class="sd">        log_dir (str, optional): Directory for saving log files. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    **Example Usage**</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            import ssmixtools</span>
+
+<span class="sd">            ssmixtools.cleaning.optional.step2(</span>
+<span class="sd">                source_dir=&#39;/path/to/source/data&#39;,</span>
+<span class="sd">                reference_dir=&#39;/path/to/reference/mapping/files&#39;,</span>
+<span class="sd">                max_workers=None,</span>
+<span class="sd">                log_dir=&#39;/path/to/log/dir&#39;,</span>
+<span class="sd">            )</span>
+
+<span class="sd">    **Workflow**</span>
+
+<span class="sd">        1. **Unit Mapping and Standardization**:</span>
+<span class="sd">            - Maps original units to standardized units using a predefined mapping table.</span>
+<span class="sd">            - Applies unit-specific value corrections through addition and multiplication rules.</span>
+
+<span class="sd">        2. **Nonnumeric Value Mapping**:</span>
+<span class="sd">            - Maps nonnumeric test result values (e.g., &quot;Positive,&quot; &quot;Negative&quot;) to standardized equivalents.</span>
+<span class="sd">            - Detects numeric values mistakenly recorded as nonnumeric and moves them to the numeric column.</span>
+
+<span class="sd">        3. **Handling Missing and Invalid Records**:</span>
+<span class="sd">            - Removes rows flagged as non-records or rows missing both numeric and nonnumeric results after cleaning.</span>
+<span class="sd">            - Ensures that all rows represent valid laboratory results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Debugging config</span>
+    <span class="n">debug_flag</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">debug_flag</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+    <span class="n">test_chunks</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">test</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="n">LogRedirector</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Create a temp dir in the parent directory of source_dir</span>
+        <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+            <span class="c1"># Initialize</span>
+            <span class="n">initialized</span> <span class="o">=</span> <span class="n">initialize_cleaning</span><span class="p">(</span>
+                <span class="n">source_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">output_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">reference_dir</span><span class="o">=</span><span class="n">reference_dir</span><span class="p">,</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+                <span class="n">test_chunks</span><span class="o">=</span><span class="n">test_chunks</span><span class="p">,</span>
+                <span class="n">internal_dir</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">initialized</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaning lab values...&quot;</span><span class="p">)</span>
+                <span class="n">clean_lab_values</span><span class="p">()</span>
+                <span class="n">move_internal_files</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All processes completed.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialization for cleaning failed.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="step3">
+<a class="viewcode-back" href="../../../../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step3">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">step3</span><span class="p">(</span>
+    <span class="n">source_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">reference_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs final data cleaning.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - After this step, all JLAC10 codes becomes the method-agnostic form (e.g., 5E0560000001---11).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_dir (str): Path to the directory containing source data cleaned by :meth:`ssmixtools.cleaning.optional.step2`.</span>
+<span class="sd">        reference_dir (str): Path to the directory containing reference mapping files for cleaning.</span>
+<span class="sd">        max_workers (int, optional): Maximum number of workers for parallel processing. Defaults to the number of physical CPU cores minus 1.</span>
+<span class="sd">        log_dir (str, optional): Directory for saving log files. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    **Example Usage**</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            import ssmixtools</span>
+
+<span class="sd">            ssmixtools.cleaning.optional.step3(</span>
+<span class="sd">                source_dir=&#39;/path/to/source/data&#39;,</span>
+<span class="sd">                reference_dir=&#39;/path/to/reference/mapping/files&#39;,</span>
+<span class="sd">                max_workers=None,</span>
+<span class="sd">                log_dir=&#39;/path/to/log/dir&#39;,</span>
+<span class="sd">            )</span>
+
+
+<span class="sd">    **Workflow**</span>
+
+<span class="sd">        1. **Standardized Code Validation**:</span>
+<span class="sd">            - Validates and cleans standardized codes (ICD-10, ATC, and JLAC10).</span>
+<span class="sd">            - Removes missing or irregular codes, truncates excessively long codes, and ensures consistency using regular expressions.</span>
+
+<span class="sd">        2. **Handling Missing Values**:</span>
+<span class="sd">            - Drops records with missing values in critical columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Debugging config</span>
+    <span class="n">debug_flag</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">debug_flag</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+    <span class="n">test_chunks</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">test</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="n">LogRedirector</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Create a temp dir in the parent directory of source_dir</span>
+        <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+            <span class="c1"># Initialize</span>
+            <span class="n">initialized</span> <span class="o">=</span> <span class="n">initialize_cleaning</span><span class="p">(</span>
+                <span class="n">source_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">output_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">reference_dir</span><span class="o">=</span><span class="n">reference_dir</span><span class="p">,</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+                <span class="n">test_chunks</span><span class="o">=</span><span class="n">test_chunks</span><span class="p">,</span>
+                <span class="n">internal_dir</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">initialized</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaning data...&quot;</span><span class="p">)</span>
+                <span class="n">perform_final_data_cleaning</span><span class="p">()</span>
+                <span class="n">move_internal_files</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All processes completed.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialization for cleaning failed.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="step4">
+<a class="viewcode-back" href="../../../../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step4">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">step4</span><span class="p">(</span>
+    <span class="n">source_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">reference_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">log_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Translates clinical codes into English terms.</span>
+
+<span class="sd">    This step translates standardized clinical codes (e.g., ICD-10, ATC, JLAC10) into their corresponding English terms using reference mapping tables.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Ensure that you have prepared ICD10_to_text.csv and ATC_to_text.csv in `reference_dir`.</span>
+<span class="sd">        - A new column `local_item_name` is created, and the original item names before translation are copied in this column.</span>
+<span class="sd">        - Untranslated codes are logged for manual review.</span>
+<span class="sd">        - A reference table to map JLAC10 codes to English terms is generated to facilitate method-agnostic mapping.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_dir (str): Path to the directory containing source data cleaned by :meth:`ssmixtools.cleaning.optional.step3`.</span>
+<span class="sd">        reference_dir (str): Path to the directory containing reference mapping files for code translation.</span>
+<span class="sd">        max_workers (int, optional): Maximum number of workers for parallel processing. Defaults to the number of physical CPU cores minus 1.</span>
+<span class="sd">        log_dir (str, optional): Directory for saving log files. If None, logs are printed to the console.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    **Example Usage**</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            import ssmixtools</span>
+
+<span class="sd">            ssmixtools.cleaning.optional.step4(</span>
+<span class="sd">                source_dir=&#39;/path/to/source/data&#39;,</span>
+<span class="sd">                reference_dir=&#39;/path/to/reference/mapping/files&#39;,</span>
+<span class="sd">                max_workers=None,</span>
+<span class="sd">                log_dir=&#39;/path/to/log/dir&#39;,</span>
+<span class="sd">            )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Debugging config</span>
+    <span class="n">debug_flag</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">debug_flag</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
+    <span class="n">test_chunks</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">test</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="k">with</span> <span class="n">LogRedirector</span><span class="p">(</span><span class="n">log_dir</span><span class="o">=</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Create a temp dir in the parent directory of source_dir</span>
+        <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+            <span class="c1"># Initialize</span>
+            <span class="n">initialized</span> <span class="o">=</span> <span class="n">initialize_cleaning</span><span class="p">(</span>
+                <span class="n">source_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">output_dir</span><span class="o">=</span><span class="n">source_dir</span><span class="p">,</span>
+                <span class="n">reference_dir</span><span class="o">=</span><span class="n">reference_dir</span><span class="p">,</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+                <span class="n">test_chunks</span><span class="o">=</span><span class="n">test_chunks</span><span class="p">,</span>
+                <span class="n">internal_dir</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">initialized</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Translating codes...&quot;</span><span class="p">)</span>
+                <span class="n">translate_codes</span><span class="p">()</span>
+                <span class="n">move_internal_files</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All processes completed.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialization for cleaning failed.&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yu Akagi, MD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

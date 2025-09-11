@@ -1,0 +1,17 @@
+ssmixtools package
+==================
+
+.. automodule:: ssmixtools
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ssmixtools.cleaning
+   ssmixtools.decryption
+   ssmixtools.extraction

@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssmixtools.decryption package &mdash; ssmixtools 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/color_theme.css?v=d2d0a5a9" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+    <link rel="canonical" href="https://yuakagi.github.io/ssmixtools/generated/ssmixtools.decryption.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ssmixtools.extraction package" href="ssmixtools.extraction.html" />
+    <link rel="prev" title="ssmixtools.cleaning.optional package" href="ssmixtools.cleaning.optional.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentations:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table_definitions/tables.html">Table Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SSMIXTOOLS API:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ssmixtools.html">ssmixtools package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.cleaning.html">ssmixtools.cleaning package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssmixtools.cleaning.mandatory.html">ssmixtools.cleaning.mandatory package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssmixtools.cleaning.optional.html">ssmixtools.cleaning.optional package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ssmixtools.decryption package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssmixtools.extraction.html">ssmixtools.extraction package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ssmixtools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="ssmixtools.html">ssmixtools package</a></li>
+      <li class="breadcrumb-item active">ssmixtools.decryption package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ssmixtools.decryption">
+<span id="ssmixtools-decryption-package"></span><h1>ssmixtools.decryption package<a class="headerlink" href="#module-ssmixtools.decryption" title="Link to this heading"></a></h1>
+<p>Data decryption utilities for ssmixtools.</p>
+<dl class="simple">
+<dt>This module provides:</dt><dd><ul class="simple">
+<li><p><cite>decrypt()</cite>: Decrypts the extracted data by ssmixtools.extraction.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="ssmixtools.decryption.decrypt">
+<span class="sig-prename descclassname"><span class="pre">ssmixtools.decryption.</span></span><span class="sig-name descname"><span class="pre">decrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">private_key_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/ssmixtools/decryption/src/decryption_main.html#decrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ssmixtools.decryption.decrypt" title="Link to this definition"></a></dt>
+<dd><p><strong>Top-Level Module for Decrypting Clinical Records</strong></p>
+<p>This module decrypts clinical records extracted using
+<a class="reference internal" href="ssmixtools.extraction.html#ssmixtools.extraction.extract" title="ssmixtools.extraction.extract"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssmixtools.extraction.extract()</span></code></a>. The encrypted data is processed
+using a hybrid cryptosystem (AES + RSA) to ensure secure handling and decryption.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>Private Key Requirement</strong>: The RSA private key used for decryption must match the public key used during encryption.</p></li>
+<li><p><strong>Input Directory Structure</strong>: The <cite>source_dir</cite> must contain files encrypted using`ssmixtools.extraction.extract`.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_dir</strong> (<em>str</em>) – Absolute path to the directory containing encrypted files.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Absolute path to the directory for saving decrypted files.</p></li>
+<li><p><strong>private_key_path</strong> (<em>str</em>) – Path to the RSA private key used for decryption.</p></li>
+<li><p><strong>max_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of parallel workers for decryption. Defaults to the number of physical CPU cores minus 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function saves decrypted files to the specified output directory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p><strong>Workflow</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Initialization</strong>:</dt><dd><ul class="simple">
+<li><p>Verifies input paths and prepares temporary storage for decryption.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Decryption</strong>:</dt><dd><ul class="simple">
+<li><p>Decrypts encrypted files using the specified private key.</p></li>
+<li><p>Organizes decrypted files by identity tags.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Finalization</strong>:</dt><dd><ul class="simple">
+<li><p>Validates and prepares decrypted files for downstream processes.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p><strong>Example Usage</strong></p>
+<blockquote>
+<div><p>Decrypt files using the <cite>decrypt</cite> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ssmixtools</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">ssmixtools</span><span class="o">.</span><span class="n">decryption</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span>
+        <span class="n">source_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/extracted/binary/files&quot;</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;/directory/for/saving/decrypted/files&quot;</span><span class="p">,</span>
+        <span class="n">private_key_path</span><span class="o">=</span><span class="s2">&quot;/path/to/your/private/key&quot;</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Decrypted Records</strong></p>
+<blockquote>
+<div><p>The decrypted files are organized into subdirectories based on identity tags.
+For example, if the data is extracted from two storages with identity tags <cite>UT</cite>
+and <cite>UK</cite>, the output directory structure will look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>output_dir
+├── UT
+│   ├── patient_id_UT.csv
+│   ├── DOB_UT.csv
+│   ├── patient_metadata_UT.csv
+│   ├── ADT-12_0_UT.csv
+│   └── ...
+└── UK
+    ├── patient_id_UK.csv
+    ├── ...
+    └── OML-11_35_UK.csv
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Post-Decryption</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>After decryption, clean the CSV files using <a class="reference internal" href="ssmixtools.cleaning.mandatory.html#module-ssmixtools.cleaning.mandatory" title="ssmixtools.cleaning.mandatory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssmixtools.cleaning.mandatory</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ssmixtools.cleaning.optional.html" class="btn btn-neutral float-left" title="ssmixtools.cleaning.optional package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ssmixtools.extraction.html" class="btn btn-neutral float-right" title="ssmixtools.extraction package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yu Akagi, MD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

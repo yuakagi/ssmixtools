@@ -1,0 +1,1267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table definitions &mdash; ssmixtools 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/color_theme.css?v=d2d0a5a9" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+    <link rel="canonical" href="https://yuakagi.github.io/ssmixtools/table_definitions/tables.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ssmixtools package" href="../generated/ssmixtools.html" />
+    <link rel="prev" title="Tutorial" href="../tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentations:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Table Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SSMIXTOOLS API:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../generated/ssmixtools.html">ssmixtools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/ssmixtools.cleaning.html">ssmixtools.cleaning package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ssmixtools.cleaning.mandatory.html">ssmixtools.cleaning.mandatory package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/ssmixtools.cleaning.optional.html">ssmixtools.cleaning.optional package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/ssmixtools.decryption.html">ssmixtools.decryption package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/ssmixtools.extraction.html">ssmixtools.extraction package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ssmixtools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Table definitions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="table-definitions">
+<h1>Table definitions<a class="headerlink" href="#table-definitions" title="Link to this heading"></a></h1>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#patient-info" id="id1">Patient info</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patient-id-map-csv" id="id2">patient_id_map.csv</a></p></li>
+<li><p><a class="reference internal" href="#patient-dob-map-csv" id="id3">patient_dob_map.csv</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#cleaned-tables" id="id4">Cleaned tables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#demographics-csv" id="id5">demographics_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#outpatient-visits-csv" id="id6">outpatient_visits_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#admission-records-csv" id="id7">admission_records_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#discharge-records-csv" id="id8">discharge_records_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#diagnosis-records-csv" id="id9">diagnosis_records_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#prescription-order-records-csv" id="id10">prescription_order_records_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#injection-order-records-csv" id="id11">injection_order_records_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#laboratory-test-results-csv" id="id12">laboratory_test_results_*.csv</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#maps-that-need-to-be-prepared-by-users" id="id13">Maps that need to be prepared by users</a></p>
+<ul>
+<li><p><a class="reference internal" href="#info-atc-csv" id="id14">info_atc.csv</a></p></li>
+<li><p><a class="reference internal" href="#icd10-to-text-csv" id="id15">ICD10_to_text.csv</a></p></li>
+<li><p><a class="reference internal" href="#atc-to-text-csv" id="id16">ATC_to_text.csv</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#optional-maps" id="id17">Optional maps</a></p>
+<ul>
+<li><p><a class="reference internal" href="#optional-text-to-atc-csv" id="id18">optional_text_to_ATC.csv</a></p></li>
+<li><p><a class="reference internal" href="#optional-jlac10-to-jlac10-csv" id="id19">optional_JLAC10_to_JLAC10.csv</a></p></li>
+<li><p><a class="reference internal" href="#lab-nonnumerics-csv" id="id20">lab_nonnumerics.csv</a></p></li>
+<li><p><a class="reference internal" href="#lab-units-csv" id="id21">lab_units.csv</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#raw-tables" id="id22">Raw tables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patient-metadata-csv" id="id23">patient_metadata_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#adt-12-csv" id="id24">ADT-12_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#adt-22-csv" id="id25">ADT-22_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#adt-52-csv" id="id26">ADT-52_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#ppr-01-csv" id="id27">PPR-01_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#omp-01-csv" id="id28">OMP-01_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#omp-02-csv" id="id29">OMP-02_*.csv</a></p></li>
+<li><p><a class="reference internal" href="#oml-11-csv" id="id30">OML-11_*.csv</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="patient-info">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Patient info</a><a class="headerlink" href="#patient-info" title="Link to this heading"></a></h2>
+<section id="patient-id-map-csv">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">patient_id_map.csv</a><a class="headerlink" href="#patient-id-map-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Original patient ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>deidentified_patient_id</p></td>
+<td><p>str</p></td>
+<td><p>deidentified patient ID</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="patient-dob-map-csv">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">patient_dob_map.csv</a><a class="headerlink" href="#patient-dob-map-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_of_birth</p></td>
+<td><p>date</p></td>
+<td><p>Date of birth of the patient in YYYYMMDD format</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="cleaned-tables">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Cleaned tables</a><a class="headerlink" href="#cleaned-tables" title="Link to this heading"></a></h2>
+<section id="demographics-csv">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">demographics_*.csv</a><a class="headerlink" href="#demographics-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>sex</p></td>
+<td><p>str</p></td>
+<td><p>Patient’s sex (gender)</p></td>
+</tr>
+<tr class="row-even"><td><p>number_of_date_folders</p></td>
+<td><p>int</p></td>
+<td><p>Number of unique encounter dates</p></td>
+</tr>
+<tr class="row-odd"><td><p>first_visit_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of the first recorded medical encounter</p></td>
+</tr>
+<tr class="row-even"><td><p>last_visit_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of the last recorded medical encounter</p></td>
+</tr>
+<tr class="row-odd"><td><p>number_of_recorded_admissions</p></td>
+<td><p>int</p></td>
+<td><p>Total number of recorded admissions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="outpatient-visits-csv">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">outpatient_visits_*.csv</a><a class="headerlink" href="#outpatient-visits-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>department</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the department the patient visited</p></td>
+</tr>
+<tr class="row-even"><td><p>visiting_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date and time when the patient visited the department</p></td>
+</tr>
+<tr class="row-odd"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the outpatient visit record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="admission-records-csv">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">admission_records_*.csv</a><a class="headerlink" href="#admission-records-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>department</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the department where the patient was treated</p></td>
+</tr>
+<tr class="row-even"><td><p>admission_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date and time of the patient’s admission</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_transaction</p></td>
+<td><p>datetime</p></td>
+<td><p>The timestamp of the most recent record transaction</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_message</p></td>
+<td><p>datetime</p></td>
+<td><p>Precise time when the message was generated</p></td>
+</tr>
+<tr class="row-odd"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="discharge-records-csv">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">discharge_records_*.csv</a><a class="headerlink" href="#discharge-records-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>discharge_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date and time when the patient was discharged</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_transaction</p></td>
+<td><p>datetime</p></td>
+<td><p>The timestamp of the most recent record transaction</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_message</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the discharge message was generated</p></td>
+</tr>
+<tr class="row-even"><td><p>discharge_disposition</p></td>
+<td><p>int</p></td>
+<td><p>Code representing the patient’s discharge disposition</p></td>
+</tr>
+<tr class="row-odd"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the discharge record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diagnosis-records-csv">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">diagnosis_records_*.csv</a><a class="headerlink" href="#diagnosis-records-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the diagnosis</p></td>
+</tr>
+<tr class="row-even"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name of the diagnosis</p></td>
+</tr>
+<tr class="row-odd"><td><p>provisional</p></td>
+<td><p>int</p></td>
+<td><p>Indicates whether the diagnosis is provisional (1 for true, 0 for false)</p></td>
+</tr>
+<tr class="row-even"><td><p>diagnosis_type</p></td>
+<td><p>str</p></td>
+<td><p>Type of the diagnosis (if available)</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_update</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the diagnosis record was last updated</p></td>
+</tr>
+<tr class="row-even"><td><p>date_of_onset</p></td>
+<td><p>datetime</p></td>
+<td><p>Date when the condition or diagnosis started</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_of_diagnosis</p></td>
+<td><p>datetime</p></td>
+<td><p>Date when the diagnosis was officially recorded</p></td>
+</tr>
+<tr class="row-even"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prescription-order-records-csv">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">prescription_order_records_*.csv</a><a class="headerlink" href="#prescription-order-records-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the prescribed medication</p></td>
+</tr>
+<tr class="row-even"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name of the prescribed medication</p></td>
+</tr>
+<tr class="row-odd"><td><p>duration</p></td>
+<td><p>str</p></td>
+<td><p>Duration for which the medication is prescribed</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the prescription was ordered</p></td>
+</tr>
+<tr class="row-odd"><td><p>start_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Start date and time of the medication prescription</p></td>
+</tr>
+<tr class="row-even"><td><p>end_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>End date and time of the medication prescription (if available)</p></td>
+</tr>
+<tr class="row-odd"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the prescription record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="injection-order-records-csv">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">injection_order_records_*.csv</a><a class="headerlink" href="#injection-order-records-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the medication</p></td>
+</tr>
+<tr class="row-even"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name of the medication</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the medication order was placed</p></td>
+</tr>
+<tr class="row-even"><td><p>start_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Start time of the medication order</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>End time of the medication order</p></td>
+</tr>
+<tr class="row-even"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the medication order record</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="laboratory-test-results-csv">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">laboratory_test_results_*.csv</a><a class="headerlink" href="#laboratory-test-results-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient, including a hospital tag</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the test</p></td>
+</tr>
+<tr class="row-even"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name of the test</p></td>
+</tr>
+<tr class="row-odd"><td><p>numeric</p></td>
+<td><p>float</p></td>
+<td><p>Numeric result of the test, if available</p></td>
+</tr>
+<tr class="row-even"><td><p>nonnumeric</p></td>
+<td><p>str</p></td>
+<td><p>Non-numeric result of the test, if available</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit</p></td>
+<td><p>str</p></td>
+<td><p>Unit of the numeric test result (e.g., ‘mg/dL’ or ‘no_unit’)</p></td>
+</tr>
+<tr class="row-even"><td><p>sampled_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the specimen was collected</p></td>
+</tr>
+<tr class="row-odd"><td><p>tested_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the test was performed</p></td>
+</tr>
+<tr class="row-even"><td><p>reported_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp when the result was reported</p></td>
+</tr>
+<tr class="row-odd"><td><p>unique_record_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for the record, including a hospital tag</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If JLAC10 is not available for item_code, the contents of item_code and item_name are determined using the following rules:</p>
+<ul>
+<li><dl>
+<dt><strong>item_code</strong></dt><dd><div class="line-block">
+<div class="line">The following items are concatenated with a “|” symbol.</div>
+<div class="line">Example: <cite>001||ER01|0181300_011</cite>.</div>
+</div>
+<ul class="simple">
+<li><p>The specimen code (from OBR-4)</p></li>
+<li><p>The code for the specimen source (from SPM-8)</p></li>
+<li><p>The code for the laboratory test group (from OBR-4)</p></li>
+<li><p>The raw local laboratory test codes</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>item_name</strong></dt><dd><div class="line-block">
+<div class="line">The following items are concatenated with a “|” symbol.</div>
+<div class="line">Example: <cite>“その他||培養同定情報(抗酸菌検査)||Mycobacterium kansasii|同定菌量”</cite>.</div>
+</div>
+<ul class="simple">
+<li><p>The specimen name (from OBR-4)</p></li>
+<li><p>The name of the specimen source (from SPM-8)</p></li>
+<li><p>The name of the laboratory test group (from OBR-4)</p></li>
+<li><p>The result of the parent laboratory test (from OBR-26; e.g., the bacteria name for the following sensitivity test results)</p></li>
+<li><p>The result of the laboratory test item related to this lab test (e.g., the bacteria name for the following colony size result if the test result is part of a series)</p></li>
+<li><p>The raw local laboratory test name</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="maps-that-need-to-be-prepared-by-users">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Maps that need to be prepared by users</a><a class="headerlink" href="#maps-that-need-to-be-prepared-by-users" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Please prepare the following tables by yourself, and place them in <cite>reference_dir</cite>. ssmixtools will automatically parse them.</p></li>
+</ul>
+</div>
+<section id="info-atc-csv">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">info_atc.csv</a><a class="headerlink" href="#info-atc-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>商品名</p></td>
+<td><p>str</p></td>
+<td><p>Name of the medication in Japanese</p></td>
+</tr>
+<tr class="row-odd"><td><p>HOT番号</p></td>
+<td><p>str</p></td>
+<td><p>The Japanese medication code (HOT code)</p></td>
+</tr>
+<tr class="row-even"><td><p>YJコード</p></td>
+<td><p>str</p></td>
+<td><p>The Japanese medication code (YJ code)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ATC5</p></td>
+<td><p>str</p></td>
+<td><p>The medication described in the 5-character ATC code</p></td>
+</tr>
+<tr class="row-even"><td><p>ATC7</p></td>
+<td><p>str</p></td>
+<td><p>The medication described in the 7-character ATC code</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This table is required for <a class="reference internal" href="../generated/ssmixtools.cleaning.mandatory.html#ssmixtools.cleaning.mandatory.render_maps" title="ssmixtools.cleaning.mandatory.render_maps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssmixtools.cleaning.mandatory.render_maps()</span></code></a>.</p></li>
+<li><p>Codes not listed in this table will not be automatically mapped to ATC.</p></li>
+</ul>
+</div>
+</section>
+<section id="icd10-to-text-csv">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">ICD10_to_text.csv</a><a class="headerlink" href="#icd10-to-text-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>ICD-10 code representing the specific diagnosis</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>The diagnosis described in English</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This table is needed for <a class="reference internal" href="../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step4" title="ssmixtools.cleaning.optional.step4"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssmixtools.cleaning.optional.step4()</span></code></a></p></li>
+</ul>
+</div>
+</section>
+<section id="atc-to-text-csv">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">ATC_to_text.csv</a><a class="headerlink" href="#atc-to-text-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>ATC code representing the therapeutic classification and hierarchy</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name or description of the therapeutic category or specific substance</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This table is needed for <a class="reference internal" href="../generated/ssmixtools.cleaning.optional.html#ssmixtools.cleaning.optional.step4" title="ssmixtools.cleaning.optional.step4"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ssmixtools.cleaning.optional.step4()</span></code></a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="optional-maps">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Optional maps</a><a class="headerlink" href="#optional-maps" title="Link to this heading"></a></h2>
+<section id="optional-text-to-atc-csv">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">optional_text_to_ATC.csv</a><a class="headerlink" href="#optional-text-to-atc-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>str</p></td>
+<td><p>Name of the medication or item in Japanese</p></td>
+</tr>
+<tr class="row-odd"><td><p>counts</p></td>
+<td><p>int</p></td>
+<td><p>Number of occurrences or usage of the medication</p></td>
+</tr>
+<tr class="row-even"><td><p>atc</p></td>
+<td><p>str</p></td>
+<td><p>ATC code representing the therapeutic classification of the medication</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Change items in the <cite>atc</cite> column for mapping.</p></li>
+</ul>
+</div>
+</section>
+<section id="optional-jlac10-to-jlac10-csv">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">optional_JLAC10_to_JLAC10.csv</a><a class="headerlink" href="#optional-jlac10-to-jlac10-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the specific laboratory test</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_name</p></td>
+<td><p>str</p></td>
+<td><p>Name of the test, including details such as sample type (e.g., ‘LDH_定量値__全血’)</p></td>
+</tr>
+<tr class="row-even"><td><p>modified</p></td>
+<td><p>str</p></td>
+<td><p>Modified or standardized version of the item code, if applicable</p></td>
+</tr>
+<tr class="row-odd"><td><p>listed_by_MEDIS</p></td>
+<td><p>str</p></td>
+<td><p>Indicates whether the test is listed by MEDIS (‘Yes’, ‘No’, or ‘Yes (except for method)’)</p></td>
+</tr>
+<tr class="row-even"><td><p>mean</p></td>
+<td><p>float</p></td>
+<td><p>Mean value of the test results</p></td>
+</tr>
+<tr class="row-odd"><td><p>frequent_unit</p></td>
+<td><p>str</p></td>
+<td><p>Most frequently used unit for the test results (e.g., ‘U/L’)</p></td>
+</tr>
+<tr class="row-even"><td><p>numeric_count</p></td>
+<td><p>int</p></td>
+<td><p>Number of test results with numeric values</p></td>
+</tr>
+<tr class="row-odd"><td><p>nonnumeric_count</p></td>
+<td><p>int</p></td>
+<td><p>Number of test results with non-numeric values</p></td>
+</tr>
+<tr class="row-even"><td><p>translated</p></td>
+<td><p>str</p></td>
+<td><p>Translated description of the test code</p></td>
+</tr>
+<tr class="row-odd"><td><p>comment</p></td>
+<td><p>str</p></td>
+<td><p>Additional information or remarks about the test</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Change items in the <cite>modified</cite> column for mapping. If you want to mark a record as non-test-result (e.g., record just containing supplementary comments), put ‘nar’ (not-a-record) in <cite>modified</cite>. Or, simply delete the row in this CSV table. Laboratory test records with these marked items will be removed from the dataset and counted.</p></li>
+<li><p>method-agnostic form of JLAC10 is allowed in <cite>modified</cite>. (e.g., 5E0560000001—11)</p></li>
+</ul>
+</div>
+</section>
+<section id="lab-nonnumerics-csv">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">lab_nonnumerics.csv</a><a class="headerlink" href="#lab-nonnumerics-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the laboratory test or item</p></td>
+</tr>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>str</p></td>
+<td><p>Description of the test or analysis, including specimen type and specific test details</p></td>
+</tr>
+<tr class="row-even"><td><p>nonnumeric</p></td>
+<td><p>str</p></td>
+<td><p>Qualitative or categorical result of the test (e.g., ‘(3+)’, ‘(4+)’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>modified</p></td>
+<td><p>str</p></td>
+<td><p>Modified version of the nonnumeric result</p></td>
+</tr>
+<tr class="row-even"><td><p>new_unit</p></td>
+<td><p>str</p></td>
+<td><p>Unit of measurement for the test result, or ‘no_unit’ if not applicable</p></td>
+</tr>
+<tr class="row-odd"><td><p>count</p></td>
+<td><p>int</p></td>
+<td><p>Frequency or number of occurrences of the result</p></td>
+</tr>
+<tr class="row-even"><td><p>comment</p></td>
+<td><p>str</p></td>
+<td><p>Additional information or remarks about the test result</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Change items in the <cite>modified</cite> column for mapping.</p></li>
+<li><p>If the modified value become numeric value, put its unit in <cite>new_unit</cite>.</p></li>
+<li><p>If you want to mark a record as non-test-result, put ‘nar’ (not-a-record) in <cite>modified</cite>.  Laboratory test records with this nonnumeric result will be removed.</p></li>
+</ul>
+</div>
+</section>
+<section id="lab-units-csv">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">lab_units.csv</a><a class="headerlink" href="#lab-units-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>item_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the specific laboratory test</p></td>
+</tr>
+<tr class="row-odd"><td><p>method_agnostic</p></td>
+<td><p>str</p></td>
+<td><p>Code for the test in a method-agnostic format</p></td>
+</tr>
+<tr class="row-even"><td><p>unit</p></td>
+<td><p>str</p></td>
+<td><p>Unit of measurement for the test result (e.g., ‘mg/dL’, ‘no_unit’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>modified</p></td>
+<td><p>str</p></td>
+<td><p>Modified or standardized unit of measurement, if applicable</p></td>
+</tr>
+<tr class="row-even"><td><p>recommended_unit</p></td>
+<td><p>str</p></td>
+<td><p>Recommended unit for reporting the test result</p></td>
+</tr>
+<tr class="row-odd"><td><p>add_before_multiplication</p></td>
+<td><p>float</p></td>
+<td><p>Constant to add to the result before applying a multiplication factor</p></td>
+</tr>
+<tr class="row-even"><td><p>multiply_by</p></td>
+<td><p>float</p></td>
+<td><p>Factor by which the result is multiplied for normalization or conversion</p></td>
+</tr>
+<tr class="row-odd"><td><p>add_after_multiplication</p></td>
+<td><p>float</p></td>
+<td><p>Constant to add to the result after applying the multiplication factor</p></td>
+</tr>
+<tr class="row-even"><td><p>count</p></td>
+<td><p>int</p></td>
+<td><p>Number of occurrences or records for this test result</p></td>
+</tr>
+<tr class="row-odd"><td><p>mean</p></td>
+<td><p>float</p></td>
+<td><p>Mean value of the test results</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>str</p></td>
+<td><p>Description of the test, including specimen type and methodology</p></td>
+</tr>
+<tr class="row-odd"><td><p>comment</p></td>
+<td><p>str</p></td>
+<td><p>Additional information or remarks about the test result</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Change items in the <cite>modified</cite> column for mapping.</p></li>
+<li><p>Change constants in <cite>add_before_multiplication</cite>, <cite>multiply_by</cite>, and <cite>add_after_multiplication</cite> if conversion is needed.</p></li>
+<li><p>If you want to mark a record as non-test-result, put ‘nar’ (not-a-record) in <cite>modified</cite>. Laboratory test records with this unit will be removed.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="raw-tables">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Raw tables</a><a class="headerlink" href="#raw-tables" title="Link to this heading"></a></h2>
+<p>Tables of the extracted clinical records before data cleaning.</p>
+<section id="patient-metadata-csv">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">patient_metadata_*.csv</a><a class="headerlink" href="#patient-metadata-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>sex</p></td>
+<td><p>str</p></td>
+<td><p>Patient’s sex (gender)</p></td>
+</tr>
+<tr class="row-even"><td><p>date_of_birth</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of birth</p></td>
+</tr>
+<tr class="row-odd"><td><p>number_of_date_folders</p></td>
+<td><p>int</p></td>
+<td><p>Number of unique encounter dates</p></td>
+</tr>
+<tr class="row-even"><td><p>first_visit_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of the first recorded medical encounter</p></td>
+</tr>
+<tr class="row-odd"><td><p>last_visit_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of the last recorded medical encounter</p></td>
+</tr>
+<tr class="row-even"><td><p>number_of_recorded_admissions</p></td>
+<td><p>int</p></td>
+<td><p>Total number of recorded admissions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adt-12-csv">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">ADT-12_*.csv</a><a class="headerlink" href="#adt-12-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>department</p></td>
+<td><p>str</p></td>
+<td><p>Name of the clinical department</p></td>
+</tr>
+<tr class="row-even"><td><p>visiting_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Date of outpatient visit</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adt-22-csv">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">ADT-22_*.csv</a><a class="headerlink" href="#adt-22-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>department</p></td>
+<td><p>str</p></td>
+<td><p>Name of the clinical department</p></td>
+</tr>
+<tr class="row-even"><td><p>admission_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Admission date and time</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_transaction</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of HL7 message transaction</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_message</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of HL7 message creation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adt-52-csv">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">ADT-52_*.csv</a><a class="headerlink" href="#adt-52-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>discharge_date</p></td>
+<td><p>datetime</p></td>
+<td><p>Discharge date and time</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_transaction</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of HL7 message transaction</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_message</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of HL7 message creation</p></td>
+</tr>
+<tr class="row-even"><td><p>discharge_disposition</p></td>
+<td><p>str</p></td>
+<td><p>Disposition of the patient upon discharge</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ppr-01-csv">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">PPR-01_*.csv</a><a class="headerlink" href="#ppr-01-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary_diagnosis_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the primary diagnosis</p></td>
+</tr>
+<tr class="row-even"><td><p>primary_diagnosis_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the primary diagnosis</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary_diagnosis_text</p></td>
+<td><p>str</p></td>
+<td><p>Name of the primary diagnosis</p></td>
+</tr>
+<tr class="row-even"><td><p>secondary_diagnosis_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the backup diagnosis</p></td>
+</tr>
+<tr class="row-odd"><td><p>secondary_diagnosis_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the backup diagnosis</p></td>
+</tr>
+<tr class="row-even"><td><p>diagnosis_type</p></td>
+<td><p>str</p></td>
+<td><p>Type of diagnosis</p></td>
+</tr>
+<tr class="row-odd"><td><p>provisional</p></td>
+<td><p>int</p></td>
+<td><p>Flag indicating if the diagnosis is provisional (0 or 1)</p></td>
+</tr>
+<tr class="row-even"><td><p>time_of_update</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of the most recent update in the EHR</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_of_onset</p></td>
+<td><p>datetime</p></td>
+<td><p>Date the condition first appeared</p></td>
+</tr>
+<tr class="row-even"><td><p>date_of_diagnosis</p></td>
+<td><p>datetime</p></td>
+<td><p>Date the diagnosis was made</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="omp-01-csv">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">OMP-01_*.csv</a><a class="headerlink" href="#omp-01-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary_prescription_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the primary prescription</p></td>
+</tr>
+<tr class="row-even"><td><p>primary_prescription_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the primary prescription</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary_prescription_text</p></td>
+<td><p>str</p></td>
+<td><p>Name of the primary prescription</p></td>
+</tr>
+<tr class="row-even"><td><p>secondary_prescription_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the backup prescription</p></td>
+</tr>
+<tr class="row-odd"><td><p>secondary_prescription_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the backup prescription</p></td>
+</tr>
+<tr class="row-even"><td><p>duration</p></td>
+<td><p>str</p></td>
+<td><p>Duration of the prescription (e.g., ‘7 days’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of when the order was created or updated</p></td>
+</tr>
+<tr class="row-even"><td><p>start_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Start time when the order becomes effective</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>End time when the order expires</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="omp-02-csv">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">OMP-02_*.csv</a><a class="headerlink" href="#omp-02-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>injection_type_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the injection type</p></td>
+</tr>
+<tr class="row-even"><td><p>injection_type_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the type of injection</p></td>
+</tr>
+<tr class="row-odd"><td><p>injection_type_text</p></td>
+<td><p>str</p></td>
+<td><p>Description of the injection type</p></td>
+</tr>
+<tr class="row-even"><td><p>primary_component_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the primary injection component</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary_component_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the primary injection component</p></td>
+</tr>
+<tr class="row-even"><td><p>primary_component_text</p></td>
+<td><p>str</p></td>
+<td><p>Name of the primary injection component</p></td>
+</tr>
+<tr class="row-odd"><td><p>secondary_component_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the backup injection component</p></td>
+</tr>
+<tr class="row-even"><td><p>secondary_component_code</p></td>
+<td><p>str</p></td>
+<td><p>Code for the backup injection component</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Timestamp of when the order was created or last updated</p></td>
+</tr>
+<tr class="row-even"><td><p>start_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>Start time when the order becomes effective</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_of_order</p></td>
+<td><p>datetime</p></td>
+<td><p>End time when the order expires</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="oml-11-csv">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">OML-11_*.csv</a><a class="headerlink" href="#oml-11-csv" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>patient_id</p></td>
+<td><p>str</p></td>
+<td><p>Unique identifier for each patient</p></td>
+</tr>
+<tr class="row-odd"><td><p>lab_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the laboratory test</p></td>
+</tr>
+<tr class="row-even"><td><p>lab_code</p></td>
+<td><p>str</p></td>
+<td><p>Code representing the laboratory test</p></td>
+</tr>
+<tr class="row-odd"><td><p>lab_text</p></td>
+<td><p>str</p></td>
+<td><p>Name of the laboratory test</p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>str</p></td>
+<td><p>Result value of the laboratory test</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit_text</p></td>
+<td><p>str</p></td>
+<td><p>Unit of the test result in text format</p></td>
+</tr>
+<tr class="row-even"><td><p>unit_code</p></td>
+<td><p>str</p></td>
+<td><p>Unit of the test result in coded format</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit_coding_system</p></td>
+<td><p>str</p></td>
+<td><p>Coding system used for the unit code</p></td>
+</tr>
+<tr class="row-even"><td><p>sampled_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Time when the specimen was collected</p></td>
+</tr>
+<tr class="row-odd"><td><p>tested_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Time when the test was performed</p></td>
+</tr>
+<tr class="row-even"><td><p>reported_time</p></td>
+<td><p>datetime</p></td>
+<td><p>Time when the result was reported</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../generated/ssmixtools.html" class="btn btn-neutral float-right" title="ssmixtools package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yu Akagi, MD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
